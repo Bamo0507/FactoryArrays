@@ -33,7 +33,7 @@ public class Calculadora {
         int contadorOperandos = 0;
 
         if (tipoADT.equals("STACK")){
-            PilaInterface adt = pilaFactory.crearLista(seleccion);
+            PilaInterface<Integer> adt = pilaFactory.crearLista(seleccion);
             
             // Contamos la cantidad de dígitos y operandos
             for(String elemento: texto){
@@ -98,7 +98,7 @@ public class Calculadora {
                 System.out.println("No se cuenta con la cantidad adecuada de dígitos u operadores.");
             }
         } else if(tipoADT.equals("LISTA")){
-            ListaInterface adt = listaFactory.crearLista(seleccion);
+            ListaInterface<Integer> adt = listaFactory.crearLista(seleccion);
                 
             // Contamos la cantidad de dígitos y operandos
             for(String elemento: texto){
