@@ -20,7 +20,6 @@ public class ConvertidorInfixToPostfix {
         Stack<Character> pila = new Stack<>();
 
         for (char caracter : infix.toCharArray()) {
-            System.out.println(caracter);
             if (Character.isDigit(caracter)) {
                 postfix.append(caracter);
             } else if (caracter == '(') {
@@ -41,7 +40,7 @@ public class ConvertidorInfixToPostfix {
         while (!pila.isEmpty()) {
             postfix.append(pila.pop());
         }
-
+        System.out.println(postfix.toString());
         return postfix.toString();
     }
 
