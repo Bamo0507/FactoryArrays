@@ -1,3 +1,4 @@
+package com.example;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.util.EmptyStackException;
