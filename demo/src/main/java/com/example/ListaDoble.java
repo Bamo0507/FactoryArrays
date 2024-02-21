@@ -2,8 +2,8 @@ package com.example;
 
 import java.util.LinkedList;
 
-public class ListaDoble<T> implements ListaInterface<T> {
-    private LinkedList<T> elementos;
+public class ListaDoble<Integer> implements ListaInterface<Integer> {
+    private LinkedList<Integer> elementos;
 
     public ListaDoble() {
         elementos = new LinkedList<>();
@@ -15,12 +15,12 @@ public class ListaDoble<T> implements ListaInterface<T> {
     }
 
     @Override
-    public void push(T elemento) {
+    public void push(Integer elemento) {
         elementos.addFirst(elemento);
     }
 
     @Override
-    public T pop() {
+    public Integer pop() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }
@@ -28,7 +28,7 @@ public class ListaDoble<T> implements ListaInterface<T> {
     }
 
     @Override
-    public T top() {
+    public Integer top() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }

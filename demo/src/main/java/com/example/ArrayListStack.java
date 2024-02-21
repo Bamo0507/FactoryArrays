@@ -1,8 +1,8 @@
 package com.example;
 import java.util.ArrayList;
 
-public class ArrayListStack<T> implements PilaInterface<T> {
-    private ArrayList<T> elemStack = new ArrayList<T>();
+public class ArrayListStack<Integer> implements PilaInterface<Integer> {
+    private ArrayList<Integer> elemStack = new ArrayList<Integer>();
 
     @Override
     public boolean isEmpty() {
@@ -10,12 +10,12 @@ public class ArrayListStack<T> implements PilaInterface<T> {
     }
 
     @Override
-    public void push(T elemento) {
+    public void push(Integer elemento) {
         elemStack.add(elemento);
     }
 
     @Override
-    public T pop() {
+    public Integer pop() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }
@@ -23,7 +23,7 @@ public class ArrayListStack<T> implements PilaInterface<T> {
     }
 
     @Override
-    public T top() {
+    public Integer top() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }

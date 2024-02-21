@@ -2,9 +2,9 @@ package com.example;
 
 import java.util.List;
 
-public class ListaStack<T> implements PilaInterface<T> {
+public class ListaStack<Integer> implements PilaInterface<Integer> {
 
-    private List<T> elementos;
+    private List<Integer> elementos;
 
     @Override
     public boolean isEmpty() {
@@ -16,12 +16,12 @@ public class ListaStack<T> implements PilaInterface<T> {
     }
 
     @Override
-    public void push(T elemento) {
+    public void push(Integer elemento) {
         elementos.add(elemento);
     }
 
     @Override
-    public T pop() {
+    public Integer pop() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }
@@ -29,7 +29,7 @@ public class ListaStack<T> implements PilaInterface<T> {
     }
 
     @Override
-    public T top() {
+    public Integer top() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }

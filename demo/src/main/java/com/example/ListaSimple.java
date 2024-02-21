@@ -1,7 +1,7 @@
 package com.example;
 
-public class ListaSimple<T> implements ListaInterface<T> {
-    private Nodo<T> elementos;
+public class ListaSimple<Integer> implements ListaInterface<Integer> {
+    private Nodo<Integer> elementos;
 
     public ListaSimple() {
         this.elementos = null;
@@ -13,24 +13,24 @@ public class ListaSimple<T> implements ListaInterface<T> {
     }
 
     @Override
-    public void push(T elemento) {
-        Nodo<T> nuevoNodo = new Nodo<>(elemento);
+    public void push(Integer elemento) {
+        Nodo<Integer> nuevoNodo = new Nodo<>(elemento);
         nuevoNodo.setSiguiente(elementos);
         elementos = nuevoNodo;
     }
 
     @Override
-    public T pop() {
+    public Integer pop() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }
-        T elemento = elementos.getElemento();
+        Integer elemento = elementos.getElemento();
         elementos = elementos.getSiguiente();
         return elemento;
     }
 
     @Override
-    public T top() {
+    public Integer top() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
         }

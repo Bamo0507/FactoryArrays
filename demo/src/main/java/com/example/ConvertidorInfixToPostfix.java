@@ -4,10 +4,17 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Stack;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 public class ConvertidorInfixToPostfix {
+    private static String infix;
 
-    public static String infixToPostfix(String infix) {
+    public ConvertidorInfixToPostfix(){
+        this.infix = leerTexto("datos.txt");
+    }
+
+    public static String infixToPostfix() {
         StringBuilder postfix = new StringBuilder();
         Stack<Character> pila = new Stack<>();
 
@@ -45,15 +52,26 @@ public class ConvertidorInfixToPostfix {
         return 0; // Para '('
     }
 
-    public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("datos.txt"))) {
-            String operacionInfix = br.readLine();
-            String operacionPostfix = infixToPostfix(operacionInfix);
-
-            System.out.println("Infix: " + operacionInfix);
-            System.out.println("Postfix: " + operacionPostfix);
+    // Método para extraer los elementos de la primera línea y devolverlos como un String
+    public static String leerTexto(String archivo) {
+        StringBuilder texto = new StringBuilder();
+        // Se intenta leer el archivo
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            // Se empieza a leer cada una de las líneas
+            while ((linea = br.readLine()) != null) {
+                // Dividir el String de manera separada
+                StringTokenizer st = new StringTokenizer(linea);
+                while (st.hasMoreTokens()) {
+                    // Agregar cada elemento al StringBuilder
+                    texto.append(st.nextToken()).append(" ");
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Devolver el contenido del StringBuilder como un String
+        return texto.toString();
     }
+
 }
