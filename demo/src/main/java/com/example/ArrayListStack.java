@@ -2,11 +2,7 @@ package com.example;
 import java.util.ArrayList;
 
 public class ArrayListStack<T> implements PilaInterface<T> {
-    private ArrayList<T> elemStack;
-
-    public ArrayListStack() {
-        elemStack = new ArrayList<>();
-    }
+    private ArrayList<T> elemStack = new ArrayList<T>();
 
     @Override
     public boolean isEmpty() {

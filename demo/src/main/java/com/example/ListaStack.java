@@ -6,11 +6,6 @@ public class ListaStack<T> implements PilaInterface<T> {
 
     private List<T> elementos;
 
-
-    public ListaStack(List<T> elementos) {
-        this.elementos = elementos;
-    }
-
     @Override
     public boolean isEmpty() {
         if(elementos == null){
