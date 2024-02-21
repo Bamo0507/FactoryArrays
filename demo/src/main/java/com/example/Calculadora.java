@@ -2,6 +2,8 @@ package com.example;
 
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.Iterator;
+
 
 public class Calculadora {
     
@@ -26,6 +28,15 @@ public class Calculadora {
         
         ArrayList<String> texto = Separacion(Postfix);
 
+        // Usamos un iterador para recorrer la lista y eliminar los elementos que sean espacios
+        Iterator<String> iterador = texto.iterator();
+        while (iterador.hasNext()) {
+            String elemento = iterador.next();
+            if (elemento.equals(" ")) {
+                iterador.remove(); // Eliminamos el elemento actual del iterador y de la lista
+            }
+        }
+
         //Se crean las variables ha implementar
         int resultado = 0;
         boolean operadorValido = true;
@@ -39,12 +50,13 @@ public class Calculadora {
             for(String elemento: texto){
                 for(char c: elemento.toCharArray()){
                     if(esDigito(c)){
-                        contadorDigitos++;
+                        contadorDigitos = 2;
                     } else{
-                        contadorOperandos++;
+                        contadorOperandos = 1;
                     }
                 }
             }
+
             // Verificamos si la cantidad de dígitos es uno más que la de operandos
             if(contadorDigitos - contadorOperandos == 1){
                 for(String elemento: texto){
@@ -54,6 +66,7 @@ public class Calculadora {
                     }
                     //Se recorren todos los elementos una vez más para hacer las operaciones
                     for(char caracter: elemento.toCharArray()){
+                        System.out.println(caracter);
                         //Si es un dígito lo pushea al Vector de la clase Pila
                         if(esDigito(caracter)){
                             adt.push(Integer.parseInt(String.valueOf(caracter)));
