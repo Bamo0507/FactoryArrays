@@ -3,17 +3,9 @@ package com.example;
 import java.util.NoSuchElementException;
 import java.util.Vector;
 
-public class VectorStack<T> implements PilaInterface<T> {
+public class VectorStack implements PilaInterface<Integer> {
     // Vector que almacena los elementos de la pila
-    private Vector<T> elemStack; 
-
-
-    /**
-     * Constructor de la clase Pila. Inicializa el Vector para almacenar los elementos.
-     */
-    public VectorStack(){
-        this.elemStack = new Vector();
-    }
+    private Vector<Integer> elemStack = new Vector<Integer>(); 
 
     /** 
      * @return boolean
@@ -34,7 +26,7 @@ public class VectorStack<T> implements PilaInterface<T> {
      * @param numero Elemento a ser insertado en la pila.
      */
 
-    public void push(T numero){
+    public void push(Integer numero){
         elemStack.add(numero);
     }
 
@@ -44,7 +36,7 @@ public class VectorStack<T> implements PilaInterface<T> {
      *
      * @return Elemento en la cima de la pila, o null si la pila está vacía.
      */ 
-    public T pop() {
+    public Integer pop() {
         if (isEmpty()) {
             throw new NoSuchElementException("La pila está vacía");
         }
@@ -56,7 +48,7 @@ public class VectorStack<T> implements PilaInterface<T> {
      *
      * @return Elemento en la cima de la pila, o null si la pila está vacía.
      */
-    public T top() {
+    public Integer top() {
         if (!isEmpty()) {
             // Obtiene el último elemento sin eliminarlo
             return elemStack.lastElement();
