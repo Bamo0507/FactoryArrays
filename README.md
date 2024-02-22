@@ -39,6 +39,7 @@ Ventajas:
 - Se tiene acceso global a la instancia, facilita su acceso desde cualquier punto.
 - Se mejora el uso de memoria al evitar estar creando objetos constantemente.
 - Aumenta la eficiencia, al solo tener que crear el objeto una vez.
+
 Desventajas:
 - Al ser global, puede presentar algunos problemas al estar haciendo pruebas unitarias.
 - Se tiene que tener cuidado con su implementación, pues, se pueden presentar casos en los que necesitemos varios objetos, cada uno con información única, y el Singlenton lo impediría.
