@@ -1,20 +1,56 @@
+//Nombre: Bryan Alberto Martínez Orellana
+//Carné: 23542
+//Nombre: Adriana Sophia Palacios Contreras
+//Carné: 23044
+//Fecha de Creación: 14/02/2024
+//Fecha de Última Modificacion: 21/02/2024
+
 package com.example;
 
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Iterator;
 
-
+/**
+ * Clase que representa una calculadora capaz de realizar operaciones
+ * aritméticas utilizando distintas estructuras de datos.
+ */
 public class Calculadora {
     
     private static ListaFactory listaFactory = new ListaFactory();
     private static PilaFactory pilaFactory = new PilaFactory();
+    // Instancia única de la calculadora
+    private static Calculadora instancia;
 
+    
+    /** 
+     * @param caracter
+     * @return boolean
+     */
     // Método para verificar si un carácter es un dígito
     public static boolean esDigito(char caracter) {
         return Character.isDigit(caracter);
     }
 
+    
+    /** 
+     * @return Calculadora
+     */
+    // Método estático para obtener la instancia única de la calculadora
+    public static Calculadora obtenerInstancia() {
+        // Si la instancia aún no ha sido creada, la crea
+        if (instancia == null) {
+            instancia = new Calculadora();
+        }
+        // Devuelve la instancia única de la calculadora
+        return instancia;
+    }
+
+    
+    /** 
+     * @param texto
+     * @return ArrayList<String>
+     */
     public static ArrayList<String> Separacion(String texto) {
         ArrayList<String> strings = new ArrayList<>();
         for (int i = 0; i < texto.length(); i++) {
@@ -24,6 +60,13 @@ public class Calculadora {
         return strings;
     }
 
+    
+    /** 
+     * @param Postfix
+     * @param seleccion
+     * @param tipoADT
+     * @return int
+     */
     public static int calcular(String Postfix, String seleccion, String tipoADT){
         
         ArrayList<String> texto = Separacion(Postfix);

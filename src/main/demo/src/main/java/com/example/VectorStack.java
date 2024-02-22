@@ -1,3 +1,10 @@
+//Nombre: Bryan Alberto Martínez Orellana
+//Carné: 23542
+//Nombre: Adriana Sophia Palacios Contreras
+//Carné: 23044
+//Fecha de Creación: 14/02/2024
+//Fecha de Última Modificacion: 21/02/2024
+
 package com.example;
 
 import java.util.NoSuchElementException;
